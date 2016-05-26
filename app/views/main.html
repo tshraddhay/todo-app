@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="container-box">
+    <h2>Todos</h2>
+  </div>
+
+  <div class="container-box">
+    <form role="form" ng-submit="addTodo()">
+      <div class="row">
+        <div class="input-group">
+          <input type="text" ng-model="newTodo" placeholder="Add Item" class="form-control">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-primary" value="Add">
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <ul>
+      <li ng-repeat="todo in todoList" ng-if="!todo.complete">
+        <span ng-bind="todo.name"></span>
+        <span ng-click="markComplete(todo)" class="glyphicon glyphicon-ok pull-right"></span>
+      </li>
+  </ul>
+</div>
